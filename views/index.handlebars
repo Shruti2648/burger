@@ -1,0 +1,60 @@
+<h1>Burgers</h1>
+
+{{log this}}
+
+<div class="col">
+    <h2 class="pt-3 pb-3 mb-4 backcol">New Burgers</h2>
+    <ul class="pl-5">
+        {{#each burgers}}
+        {{#unless devoured}}
+            <div class="col-9">
+                {{> burgers/burger-block devoured=false}}
+            </div>
+        {{/unless}}
+        {{/each}}
+        
+    </ul>
+</div>
+
+<div class="col">
+    <h2 class="pt-3 pb-3 mb-4 backcol">Devoured Burgers</h2>
+    <ul class="pl-5">
+        {{#each burgers}}
+        {{#if devoured}}
+                <div class="col-9">
+                    {{> burgers/burger-block devoured=true}}
+                </div>
+        {{/if}}
+        {{/each}}
+        
+    </ul>
+</div>
+
+
+    <h2>Add a Burger</h2>
+    <form class="create-form">
+        <div class="form-group">
+            <label for="new-burger">What type of burger would you like?</label>
+            <input type="text" id="new-burger" name="name">
+        </div>
+        <div class="form-group">
+            <label for="devoured">Devour it right away?</label><br>
+            <input type="radio" name="devoured" value="1" checked> Yes!<br>
+            <input type="radio" name="devoured" value="0"> No
+        </div>
+        <button type="submit">Add Burger</button>
+    </form>
+
+    <script>
+
+
+        //onclick devour: update the db
+                // get wch one / update db (ajax call)
+
+
+
+        // form (add more burgers )  onclick then to create the burget on the db
+
+
+
+    </script>
